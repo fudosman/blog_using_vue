@@ -1,13 +1,10 @@
 <template>
   <div>
     <div v-theme:column="'wide'" id="show-blogs">
-      <h1>All Blog Articles</h1>
+      <h1>List Blog Titles</h1>
       <input type="text" name="" v-model="search" placeholder="search blogs" id="">
       <div v-for="blog in filteredBlogs" :key="blog" class="single-blog">
-        <router-link v-rainbow v-bind:to="'/blog/'+blog.id">
-          <h2>{{blog.title | to-uppercase}}</h2>
-        </router-link>
-        <article>{{blog.body | snippet}}</article>
+        <h2 v-rainbow>{{blog.title | to-uppercase}}</h2>
       </div>
     </div>
   </div>
@@ -33,7 +30,7 @@ export default {
       
   },
   computed:{
-
+    
   },
   // for registering filters locally
   filters:{
